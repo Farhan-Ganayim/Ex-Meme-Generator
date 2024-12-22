@@ -17,6 +17,11 @@
         <section class="editor-section">
             <h2>Editor</h2>
             <canvas class="meme-canvas" width="500" height="500"></canvas>
+            <form class="txt-controls"  onsubmit="onTextSubmit(event)">
+
+                <input type="text" class="txt-input"  placeholder="Enter meme text"  oninput="onTextInput(this.value)" >
+                <button>Add Text</button>
+            </form>
         </section>
     </main>
     <footer>
