@@ -19,4 +19,20 @@ header {
     text-align: center;
 }
 
+.gallery-section{
+    text-align: center; 
+}
+.img-container {
+    display: flex; 
+    justify-content: center; 
+    gap: 10px; 
+}
+.gallery-img{
+    width: 200px;
+    height: auto;
+    background-repeat: 5px;
+}
+
+
+
 
