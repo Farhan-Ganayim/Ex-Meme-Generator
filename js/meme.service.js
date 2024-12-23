@@ -10,7 +10,7 @@ var gMeme = {
     selectedLineIdx: 0,
     lines: [
         {
-            txt: 'First Meme',
+            txt: 'First Line',
             size: 20,
             color: 'black',
             pos: { x: 50, y: 50 }
@@ -53,17 +53,13 @@ function switchLine() {
 
 function addLine() {
 
-    // var lineHeight
-    // if (gMeme.lines.length === 0) lineHeight = 50
-    // else lineHeight = gElCanvas.height - 50
-
-    const newLine = {
+        const newLine = {
         txt: 'New Line',
         size: 20,
         color: 'red',
         pos: {
-            x: Math.random()*gElCanvas.width,
-            y: Math.random()*gElCanvas.height,
+            x: Math.random()*(gElCanvas.width-40),
+            y: Math.random()*(gElCanvas.height),
         }
     }
     gMeme.lines.push(newLine)
