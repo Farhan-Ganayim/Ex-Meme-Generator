@@ -109,6 +109,8 @@ function onCanvasClick(ev) {
         renderMeme()
     }
     console.log();
+    console.log('delivery');
+    
     
 }
 
