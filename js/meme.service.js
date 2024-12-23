@@ -12,7 +12,14 @@ var gMeme = {
         {
             txt: 'First Meme',
             size: 20,
-            color: 'black'
+            color: 'black',
+            pos: { x: 50, y: 50 }
+        },
+        {
+            txt: 'Second Line',
+            size: 20,
+            color: 'blue',
+            pos: { x: 50, y: 450 }
         }
     ]
 }
@@ -32,5 +39,35 @@ function setImg(imgId) {
 function setLineTxt(txt) {
     gMeme.lines[gMeme.selectedLineIdx].txt = txt
 }
+function changeFontSize(diff) {
+    const line = gMeme.lines[gMeme.selectedLineIdx]
+    line.size += diff
+    if (line.size < 10) line.size = 10
+}
+
+function switchLine() {
+
+    if (gMeme.selectedLineIdx === gMeme.lines.length - 1) gMeme.selectedLineIdx = 0
+    else gMeme.selectedLineIdx++
+}
+
+function addLine() {
+
+    // var lineHeight
+    // if (gMeme.lines.length === 0) lineHeight = 50
+    // else lineHeight = gElCanvas.height - 50
+
+    const newLine = {
+        txt: 'New Line',
+        size: 20,
+        color: 'red',
+        pos: {
+            x: Math.random()*gElCanvas.width,
+            y: Math.random()*gElCanvas.height,
+        }
+    }
+    gMeme.lines.push(newLine)
+}
+
 
 

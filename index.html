@@ -17,11 +17,20 @@
         <section class="editor-section">
             <h2>Editor</h2>
             <canvas class="meme-canvas" width="500" height="500"></canvas>
-            <form class="txt-controls"  onsubmit="onTextSubmit(event)">
-
-                <input type="text" class="txt-input"  placeholder="Enter meme text"  oninput="onTextInput(this.value)" >
-                <button>Add Text</button>
-            </form>
+            <div class="controls-container">
+                <form class="txt-controls"  onsubmit="onTextSubmit(event)">
+    
+                    <input type="text" class="txt-input"  placeholder="Enter meme text"  oninput="onTextInput(this.value)" >
+                    <button>Add Text</button>
+                </form>
+                
+                <button onclick="onSwitchLine()">Switch Line</button>
+                <button onclick="onAddLine()">Add Line</button>
+                <button onclick="onIncreaseFont()">Increase Font</button>
+                <button onclick="onDecreaseFont()">Decrease Font</button>
+                <button onclick="onChangeColor()">Change Color</button>
+                <a href="#" onclick="onDownloadMeme(this)" download="meme.jpg" class="download-canvas">Download Meme</a>
+            </div>
         </section>
     </main>
     <footer>
