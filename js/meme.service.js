@@ -49,20 +49,26 @@ function switchLine() {
 
     if (gMeme.selectedLineIdx === gMeme.lines.length - 1) gMeme.selectedLineIdx = 0
     else gMeme.selectedLineIdx++
+
 }
 
 function addLine() {
 
-        const newLine = {
+    const newLine = {
         txt: 'New Line',
         size: 20,
         color: 'red',
         pos: {
-            x: Math.random()*(gElCanvas.width-40),
-            y: Math.random()*(gElCanvas.height),
+            x: Math.random() * (gElCanvas.width - 40),
+            y: Math.random() * (gElCanvas.height),
         }
     }
     gMeme.lines.push(newLine)
+    gMeme.selectedLineIdx = gMeme.lines.length - 1
+    newLine.lineArea = calcLineArea(newLine)
+    renderMeme()
+    // gMeme.selectedLineIdx=gMeme.lines.length-1
+    // switchLine()
 }
 
 
