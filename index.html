@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/0e1421f711.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="css/main.css">
     <title>Meme Generator</title>
 </head>
+
 <body class="main-layout" onload="onInit()">
     <header class="main-header">
         <h1>Meme Generator</h1>
@@ -17,29 +21,84 @@
         <section class="editor-section">
             <h2>Editor</h2>
             <canvas class="meme-canvas" width="500" height="500"></canvas>
-            <div class="controls-container">
-                <form class="txt-controls"  onsubmit="onTextSubmit(event)">
-    
-                    <input type="text" class="txt-input"  placeholder="Enter meme text"  oninput="onTextInput(this.value)" >
+            <!-- <div class="controls-container"> -->
+            <div class="editor-input-container">
+                <form class="txt-controls" onsubmit="onTextSubmit(event)">
+
+                    <input type="text" class="txt-input" placeholder="Enter meme text"
+                        oninput="onTextInput(this.value)">
                     <button>Add Text</button>
                 </form>
-                
-                <button onclick="onSwitchLine()">Switch Line</button>
-                <button onclick="onAddLine()">Add Line</button>
-                <button onclick="onIncreaseFont()">Increase Font</button>
-                <button onclick="onDecreaseFont()">Decrease Font</button>
-                <button onclick="onChangeColor()">Change Color</button>
-                <a href="#" onclick="onDownloadMeme(this)" download="meme.jpg" class="download-canvas">Download Meme</a>
             </div>
+
+            <div class="editor-controls-container">
+                <div class="line-controls">
+
+                    <button onclick="onSwitchLine()" class="btn-editor btn-switch-inputs" fdprocessedid="u8rart">
+                        <i class="fa-solid fa-arrow-up-long"></i>
+                        <i class="fa-solid fa-arrow-down-long"></i>
+                        <button onclick="onAddLine()" class="btn-editor btn-add-input">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                        <button onclick="onDeleteLine()">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                </div>
+                <div class="font-controls">
+
+                    <button onclick="onIncreaseFont()">
+                        <i class="fa-solid fa-font">+</i>
+                    </button>
+                    <button onclick="onDecreaseFont()">
+                        <i class="fa-solid fa-font">-</i>
+                    </button>
+                    <button class="btn-font">
+                        <i class="fa-solid fa-align-left">L</i>
+                    </button>
+                    <button class="btn-font">
+                        <i class="fa-solid fa-align-center"></i>
+                    </button>
+                    <button>
+                        <i class="fas fa-align-right"></i>
+                    </button>
+                    <select class="font-select" onchange="onChangeFont(this.value)">
+                        <option value="Arial">ARIAL</option>
+                        <option value="Impact">IMPACT</option>
+                        <option value="verdana">VERDANA</option>
+                        <option value="tahoma">TAHOMA</option>
+                    </select>
+                    <button class="btn-font fa-solid fa-brush">
+                        <input type="color" class="btn-font">
+                    </button>
+                    <button class="btn-font fa-solid fa-fill-drip">
+                        <input type="color" class="btn-font">
+                    </button>
+                    <div class="editor-actions-container">
+                        <a href="#" onclick="onSaveMeme()" class="btn-save" title="Save">
+                            <i class="fas fa-save"></i> Save
+                        </a>
+                        <a href="#" onclick="onShareMeme()" class="btn-share" title="Share">
+                            <i class="fas fa-share"></i> Share
+                        </a>
+                        <a href="#" onclick="onDownloadMeme(this)" download="meme.jpg" class="btn-download"
+                            title="Download">
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
         </section>
     </main>
     <footer>
         Meme Generator 2024
     </footer>
 
-<script src="js/main.js"></script>    
-<script src="js/meme.service.js"></script>    
-<script src="js/controllers/meme.controller.js"></script>    
-<script src="js/controllers/gallery.controller.js"></script>    
+    <script src="js/main.js"></script>
+    <script src="js/meme.service.js"></script>
+    <script src="js/controllers/meme.controller.js"></script>
+    <script src="js/controllers/gallery.controller.js"></script>
 </body>
+
 </html>
