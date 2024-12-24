@@ -1,37 +1,22 @@
-* {
-    box-sizing: border-box;
-}
-body {
 
-    display: flex;
-    flex-direction: column;
-    background-color: #f5efef;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    min-height: 100vh;
+@import 'basics/base.css';
+@import 'basics/helpers.css';
+@import 'basics/layout.css';
 
-}
-header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 1rem;
-    text-align: center;
-}
+
+
 
 .gallery-section{
     text-align: center; 
 }
-.img-container {
-    display: flex; 
-    justify-content: center; 
-    gap: 10px; 
-}
+
 .gallery-img{
     width: 200px;
     height: auto;
     background-repeat: 5px;
 }
+
+
 
 
 

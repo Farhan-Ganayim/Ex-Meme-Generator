@@ -11,15 +11,23 @@
 </head>
 
 <body class="main-layout" onload="onInit()">
-    <header class="main-header">
+    <header class="main-header flex" >
         <h1>Meme Generator</h1>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#" onclick="showGallery()">Gallery</a></li>
+                <li><a href="#" onclick="showSaved()">Saved</a></li>
+                <li><a href="#" onclick="randomizeMeme()">Randomize</a></li>
+            </ul>
+        </nav>
     </header>
+    
     <main>
-        <section class="gallery-section">
+        <section class="gallery-section ">
             <h2 class="gallery-title">Gallery</h2>
-            <div class="gallery-container"></div>
+            <div class="gallery-container flex wrap justify-center"></div>
         </section>
-        <section class="editor-section">
+        <section class="editor-section hidden">
             <h2>Editor</h2>
             <canvas class="meme-canvas" width="500" height="500"></canvas>
             <!-- <div class="controls-container"> -->
@@ -74,20 +82,20 @@
                     <button class="btn-font fa-solid fa-fill-drip">
                         <input type="color" class="btn-font">
                     </button>
-                    <div class="editor-actions-container">
-                        <a href="#" onclick="onSaveMeme()" class="btn-save" title="Save">
-                            <i class="fas fa-save"></i> Save
-                        </a>
-                        <a href="#" onclick="onShareMeme()" class="btn-share" title="Share">
-                            <i class="fas fa-share"></i> Share
-                        </a>
-                        <a href="#" onclick="onDownloadMeme(this)" download="meme.jpg" class="btn-download"
-                            title="Download">
-                            <i class="fas fa-download"></i> Download
-                        </a>
-                    </div>
-
                 </div>
+                <div class="editor-actions-container">
+                    <a href="#" onclick="onSaveMeme()" class="btn-save" title="Save">
+                        <i class="fas fa-save"></i> Save
+                    </a>
+                    <a href="#" onclick="onShareMeme()" class="btn-share" title="Share">
+                        <i class="fas fa-share"></i> Share
+                    </a>
+                    <a href="#" onclick="onDownloadMeme(this)" download="meme.jpg" class="btn-download"
+                        title="Download">
+                        <i class="fas fa-download"></i> Download
+                    </a>
+                </div>
+
             </div>
 
         </section>

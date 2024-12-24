@@ -21,8 +21,6 @@ var gImgs = [
     { id: 18, url: 'imgs/18.jpg', keywords: ['toy story', 'cartoon',  'movie'] },
 ]
 
-
-
 var gMeme = {
     selectedImgId: 3,
     selectedLineIdx: 0,
@@ -57,6 +55,7 @@ function setImg(imgId) {
 function setLineTxt(txt) {
     gMeme.lines[gMeme.selectedLineIdx].txt = txt
 }
+
 function changeFontSize(diff) {
     const line = gMeme.lines[gMeme.selectedLineIdx]
     line.size += diff
@@ -67,7 +66,6 @@ function switchLine() {
 
     if (gMeme.selectedLineIdx === gMeme.lines.length - 1) gMeme.selectedLineIdx = 0
     else gMeme.selectedLineIdx++
-
 }
 
 function addLine() {
@@ -85,8 +83,12 @@ function addLine() {
     gMeme.selectedLineIdx = gMeme.lines.length - 1
     newLine.lineArea = calcLineArea(newLine)
     renderMeme()
-    // gMeme.selectedLineIdx=gMeme.lines.length-1
-    // switchLine()
+
+}
+function showGallery() {
+    document.querySelector('.gallery-section').classList.remove('hidden');
+    document.querySelector('.editor-section').classList.add('hidden');
+    // Hide other sections if necessary
 }
 
 
