@@ -1,6 +1,9 @@
 
 .gallery-section{
 
+    max-width: 60vw;
+    place-self: center;
+
 }
 
 .gallery-container{
