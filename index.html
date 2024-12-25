@@ -10,10 +10,10 @@
     <title>Meme Generator</title>
 </head>
 
-<body class="main-layout" onload="onInit()">
+<body class="main-layout grid" onload="onInit()">
     <header class="main-header grid poppins-med justify-between align-center">
         <h1 class="logo" onclick="showGallery()">Meme Generator</h1>
-        <nav class="main-nav">
+        <nav class="main-nav flex justify-center">
             <ul class="nav-links flex">
                 <li class="flex sss"><a href="#" onclick="showGallery()">Gallery</a></li>
                 <li><a href="#" onclick="showSaved()">Saved</a></li>
@@ -25,87 +25,90 @@
             <option value="he">עברית</option>
         </select>
     </header>
-    
+
     <main>
         <section class="gallery-section ">
             <div class="gallery-container flex wrap justify-center"></div>
         </section>
-        <section class="editor-section flex flex-column hidden">
-            <h2>Editor</h2>
+        <section class="editor-section grid justify-center hidden">
             <canvas class="meme-canvas" width="500" height="500"></canvas>
-            <!-- <div class="controls-container"> -->
-            <div class="editor-input-container">
-                <form class="txt-controls" onsubmit="onTextSubmit(event)">
+            <div class="editor-container grid justify-center ">
+                <div class="editor-input-container place-center">
+                    <form class="txt-controls" onsubmit="onTextSubmit(event)">
 
-                    <input type="text" class="txt-input" placeholder="Enter meme text"
-                        oninput="onTextInput(this.value)">
-                    <button>Add Text</button>
-                </form>
-            </div>
+                        <input type="text" class="txt-input" placeholder="Enter meme text"
+                            oninput="onTextInput(this.value)">
+                        <button>Add Text</button>
+                    </form>
+                </div>
 
-            <div class="editor-controls-container">
-                <div class="line-controls">
+                <div class="editor-controls-container grid">
+                    <div class="line-controls place-center">
 
-                    <button onclick="onSwitchLine()" class="btn-editor btn-switch-inputs" fdprocessedid="u8rart">
-                        <i class="fa-solid fa-arrow-up-long"></i>
-                        <i class="fa-solid fa-arrow-down-long"></i>
-                        <button onclick="onAddLine()" class="btn-editor btn-add-input">
-                            <i class="fa-solid fa-plus"></i>
+                        <button onclick="onSwitchLine()" class="btn-editor btn-switch-inputs" fdprocessedid="u8rart">
+                            <i class="fa-solid fa-arrow-up-long"></i>
+                            <i class="fa-solid fa-arrow-down-long"></i>
+                            <button onclick="onAddLine()" class="btn-editor btn-add-input">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                            <button class="btn-editor" onclick="onDeleteLine()">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                    </div>
+                    <div class="font-controls grid place-center">
+
+                        <button class="btn-font" onclick="onIncreaseFont()">
+                            <i class="fa-solid fa-font">+</i>
                         </button>
-                        <button onclick="onDeleteLine()">
-                            <i class="fas fa-trash-alt"></i>
+                        <button class="btn-font" onclick="onDecreaseFont()">
+                            <i class="fa-solid fa-font">-</i>
                         </button>
+                        <button class="btn-font">
+                            <i class="fa-solid fa-align-left"></i>
+                        </button>
+                        <button class="btn-font">
+                            <i class="fa-solid fa-align-center"></i>
+                        </button>
+                        <button class="btn-font">
+                            <i class="fas fa-align-right"></i>
+                        </button>
+                        <select class="font-select btn-font" onchange="onChangeFont(this.value)">
+                            <option value="Arial">ARIAL</option>
+                            <option value="Impact">IMPACT</option>
+                            <option value="verdana">VERDANA</option>
+                            <option value="tahoma">TAHOMA</option>
+                        </select>
+                        <button class="btn-font stroke-btn flex justify-center">
+                            <i class="fa-solid fa-brush" ></i>
+                            <input type="color" class="stroke-color-def btn-font">
+                        </button>
+                        <button class="btn-font fill-btn flex justify-center">
+                            <i class="fa-solid fa-fill-drip"></i>
+                            <input type="color" class="fill-color-def">
+                        </button>
+                    </div>
+                    <div class="editor-actions-container place-center">
+                        <a href="#" onclick="onSaveMeme()" class="btn-save" title="Save">
+                            <i class="fas fa-save"></i> Save
+                        </a>
+                        <a href="#" onclick="onShareMeme()" class="btn-share" title="Share">
+                            <i class="fas fa-share"></i> Share
+                        </a>
+                        <a href="#" onclick="onDownloadMeme(this)" download="meme.jpg" class="btn-download"
+                            title="Download">
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
                 </div>
-                <div class="font-controls">
 
-                    <button onclick="onIncreaseFont()">
-                        <i class="fa-solid fa-font">+</i>
-                    </button>
-                    <button onclick="onDecreaseFont()">
-                        <i class="fa-solid fa-font">-</i>
-                    </button>
-                    <button class="btn-font">
-                        <i class="fa-solid fa-align-left">L</i>
-                    </button>
-                    <button class="btn-font">
-                        <i class="fa-solid fa-align-center"></i>
-                    </button>
-                    <button>
-                        <i class="fas fa-align-right"></i>
-                    </button>
-                    <select class="font-select" onchange="onChangeFont(this.value)">
-                        <option value="Arial">ARIAL</option>
-                        <option value="Impact">IMPACT</option>
-                        <option value="verdana">VERDANA</option>
-                        <option value="tahoma">TAHOMA</option>
-                    </select>
-                    <button class="btn-font fa-solid fa-brush">
-                        <input type="color" class="btn-font">
-                    </button>
-                    <button class="btn-font fa-solid fa-fill-drip">
-                        <input type="color" class="btn-font">
-                    </button>
-                </div>
-                <div class="editor-actions-container">
-                    <a href="#" onclick="onSaveMeme()" class="btn-save" title="Save">
-                        <i class="fas fa-save"></i> Save
-                    </a>
-                    <a href="#" onclick="onShareMeme()" class="btn-share" title="Share">
-                        <i class="fas fa-share"></i> Share
-                    </a>
-                    <a href="#" onclick="onDownloadMeme(this)" download="meme.jpg" class="btn-download"
-                        title="Download">
-                        <i class="fas fa-download"></i> Download
-                    </a>
-                </div>
 
             </div>
-
         </section>
     </main>
-    <footer>
-        Meme Generator 2024
+    <footer class="poppins-ita">
+        © Meme Generator 2024
     </footer>
+
 
     <script src="js/main.js"></script>
     <script src="js/meme.service.js"></script>

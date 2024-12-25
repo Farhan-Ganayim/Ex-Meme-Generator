@@ -4,13 +4,8 @@
     align-items: center;
     padding: 1em 1.5em;
     margin-bottom: 4em;
-    background-color: #3E693C;
+    background-color: #19a59f;
     color: white;
-}
-
-.main-nav  {
-    display: flex;
-    justify-content: center; 
 }
 
 .main-header .logo:hover{
@@ -30,4 +25,5 @@ cursor: pointer;
 .nav-links a:hover {
     color: #acb0b4;
 }
+
 

@@ -6,6 +6,9 @@
 .grid {
     display: grid;
 }
+.grid.justify-center {
+    justify-content: center;
+}
 
 .hidden {
     display: none;
@@ -13,6 +16,10 @@
 
 .flex.justify-center {
     justify-content: center;
+}
+
+.place-center{
+    place-self: center;
 }
 
 .flex.justify-between {
@@ -36,4 +43,7 @@
 
 .poppins-med {
     font-family: Poppins-Medium;
+}
+.poppins-ita {
+    font-family: Poppins-Italic;
 }

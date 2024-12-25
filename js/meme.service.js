@@ -28,7 +28,7 @@ var gMeme = {
         {
             txt: 'First Line',
             size: 20,
-            color: 'black',
+            color: 'purple',
             pos: { x: 50, y: 50 }
         },
         {

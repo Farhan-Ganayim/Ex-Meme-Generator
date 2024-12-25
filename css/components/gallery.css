@@ -1,0 +1,16 @@
+
+.gallery-section{
+
+}
+
+.gallery-container{
+    gap: .5em;
+}
+
+.gallery-section .gallery-title{
+    padding-top: 3em;
+
+}
+.gallery-container img{
+    border-radius: .7em;
+}

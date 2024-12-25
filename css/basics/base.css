@@ -4,6 +4,9 @@
 
 body {
     margin: 0;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    background-color: #3d3f44;
   }
 
 h1,
@@ -14,4 +17,7 @@ h2 {
 a {
     text-decoration: none;
     color: unset;
+  }
+  canvas{
+    border-radius: .5em;
   }
