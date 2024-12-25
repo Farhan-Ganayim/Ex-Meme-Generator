@@ -61,11 +61,7 @@ function onAddLine() {
 function drawFrameOnLine() {
     const meme = getMeme()
     const selectedLine = meme.lines[meme.selectedLineIdx]
-    // gCtx.font = `${selectedLine.size}px Arial`
-    // const txtWidth = gCtx.measureText(selectedLine.txt).width
-    // const txtHeight = selectedLine.size
-    // console.log(txtWidth)
-    selectedLine.lineArea=calcLineArea(selectedLine)
+     selectedLine.lineArea=calcLineArea(selectedLine)
 
     gCtx.strokeStyle = 'green'
     gCtx.lineWidth = 3

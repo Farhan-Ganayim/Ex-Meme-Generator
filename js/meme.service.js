@@ -27,13 +27,13 @@ var gMeme = {
     lines: [
         {
             txt: 'First Line',
-            size: 20,
+            size: 35,
             color: 'purple',
             pos: { x: 50, y: 50 }
         },
         {
             txt: 'Second Line',
-            size: 20,
+            size: 35,
             color: 'blue',
             pos: { x: 50, y: 450 }
         }
@@ -72,8 +72,8 @@ function addLine() {
 
     const newLine = {
         txt: 'New Line',
-        size: 20,
-        color: 'red',
+        size: 35,
+        color: 'darkgray',
         pos: {
             x: Math.random() * (gElCanvas.width - 40),
             y: Math.random() * (gElCanvas.height),
