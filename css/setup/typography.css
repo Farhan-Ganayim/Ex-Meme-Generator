@@ -1,0 +1,28 @@
+/* @font-face {
+    font-family: Eurofurenceregular;
+    src: url(/fonts/eurof35.ttf);
+}
+@font-face {
+    font-family: Eurofurencebold;
+    src: url(/fonts/eurof55.ttf);
+} */
+
+@font-face {
+    font-family: Lato;
+    src: url(/fonts/Lato/Lato-Bold.ttf);
+}
+@font-face {
+    font-family: Poppins-Medium;
+    src: url(/fonts/poppins/Poppins-Medium.ttf);
+}
+
+/* @font-face {
+    font-family: Lato-bold;
+    src: url(/fonts/Lato-Bold.ttf);
+
+}
+
+@font-face {
+    font-family: Lato-black;
+    src: url(/fonts/Lato-Black.ttf);
+} */

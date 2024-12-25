@@ -11,23 +11,26 @@
 </head>
 
 <body class="main-layout" onload="onInit()">
-    <header class="main-header flex" >
-        <h1>Meme Generator</h1>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#" onclick="showGallery()">Gallery</a></li>
+    <header class="main-header grid poppins-med justify-between align-center">
+        <h1 class="logo" onclick="showGallery()">Meme Generator</h1>
+        <nav class="main-nav">
+            <ul class="nav-links flex">
+                <li class="flex sss"><a href="#" onclick="showGallery()">Gallery</a></li>
                 <li><a href="#" onclick="showSaved()">Saved</a></li>
                 <li><a href="#" onclick="randomizeMeme()">Randomize</a></li>
             </ul>
         </nav>
+        <select class="lang-select" onchange="changeLanguage()">
+            <option value="en">English</option>
+            <option value="he">עברית</option>
+        </select>
     </header>
     
     <main>
         <section class="gallery-section ">
-            <h2 class="gallery-title">Gallery</h2>
             <div class="gallery-container flex wrap justify-center"></div>
         </section>
-        <section class="editor-section hidden">
+        <section class="editor-section flex flex-column hidden">
             <h2>Editor</h2>
             <canvas class="meme-canvas" width="500" height="500"></canvas>
             <!-- <div class="controls-container"> -->

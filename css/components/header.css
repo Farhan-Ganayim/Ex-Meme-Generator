@@ -1,6 +1,33 @@
-header {
-    background-color: #4CAF50;
+.main-header {
+
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    padding: 1em 1.5em;
+    margin-bottom: 4em;
+    background-color: #3E693C;
     color: white;
-    padding: 1rem;
-    text-align: center;
 }
+
+.main-nav  {
+    display: flex;
+    justify-content: center; 
+}
+
+.main-header .logo:hover{
+cursor: pointer;
+}
+.nav-links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 1em;
+    
+}
+.main-nav a {
+    font-size: 1.2em;
+}
+.nav-links a:hover {
+    color: #acb0b4;
+}
+
