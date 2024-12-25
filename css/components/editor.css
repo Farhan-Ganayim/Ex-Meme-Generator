@@ -30,6 +30,7 @@
 }
 
 .line-controls {
+    margin-top: .5em;
     place-self: center;
     gap: .5em;
 }
