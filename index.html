@@ -32,13 +32,11 @@
         </section>
         <section class="editor-section grid justify-center hidden">
             <canvas class="meme-canvas" width="500" height="500"></canvas>
-            <div class="editor-container grid justify-center ">
-                <div class="editor-input-container place-center">
+            <div class="editor-container grid">
+                <div class="editor-input-container flex">
                     <form class="txt-controls" onsubmit="onTextSubmit(event)">
-
-                        <input type="text" class="txt-input" placeholder="Enter meme text"
+                        <input type="text" class="txt-input" placeholder="Add Text Here"
                             oninput="onTextInput(this.value)">
-                        <button>Add Text</button>
                     </form>
                 </div>
 

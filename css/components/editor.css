@@ -3,15 +3,27 @@
     gap: 2em;
 }
 
-.editor-container {}
+.editor-input-container{
+    place-self:end center ;
+}
 
-.editor-input-container {
-    /* place-self: center; */
+.editor-input-container .add-txt-btn{
+    height: 3.5em;
+    font-family: Poppins-Medium;
+    border-radius: 1.2em;
+}
+.txt-input{
+    height: 3.5em;
+    width:25em;
+    border-radius: 3em;
+    font-family: Poppins-Medium ;
 }
 
 .line-controls {
+    place-self: center;
     gap: .5em;
 }
+
 .line-controls button:hover{
     cursor: pointer;
     opacity:0.7
@@ -34,7 +46,6 @@
     background-color: #f05036   ;
 }
 
-
 .font-controls {
     grid-template-columns: repeat(5, 1fr);
     gap: .5em;
@@ -42,7 +53,6 @@
     padding: 1em;
     border-radius: 1em;
     box-sizing: border-box;
-    /* align-items: center; */
 }
 
 .font-controls .btn-font {
@@ -51,7 +61,6 @@
     padding: 1.2em .2em;
     font-size: 1em;
     cursor: pointer;
-    /* margin: 1em; */
 }
 
 .font-controls .font-select {
