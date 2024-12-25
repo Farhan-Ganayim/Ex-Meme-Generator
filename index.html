@@ -43,17 +43,17 @@
                 </div>
 
                 <div class="editor-controls-container grid">
-                    <div class="line-controls place-center">
-
-                        <button onclick="onSwitchLine()" class="btn-editor btn-switch-inputs" fdprocessedid="u8rart">
+                    <div class="line-controls flex place-center">
+                        <button onclick="onSwitchLine()" class="btn-editor btn-switch-inputs">
                             <i class="fa-solid fa-arrow-up-long"></i>
                             <i class="fa-solid fa-arrow-down-long"></i>
-                            <button onclick="onAddLine()" class="btn-editor btn-add-input">
-                                <i class="fa-solid fa-plus"></i>
-                            </button>
-                            <button class="btn-editor" onclick="onDeleteLine()">
-                                <i class="fas fa-trash-alt"></i>
-                            </button>
+                        </button>
+                        <button onclick="onAddLine()" class="btn-editor btn-add-input">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                        <button class="btn-editor btn-delete-line" onclick="onDeleteLine()">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
                     </div>
                     <div class="font-controls grid place-center">
 
@@ -79,7 +79,7 @@
                             <option value="tahoma">TAHOMA</option>
                         </select>
                         <button class="btn-font stroke-btn flex justify-center">
-                            <i class="fa-solid fa-brush" ></i>
+                            <i class="fa-solid fa-brush"></i>
                             <input type="color" class="stroke-color-def btn-font">
                         </button>
                         <button class="btn-font fill-btn flex justify-center">
