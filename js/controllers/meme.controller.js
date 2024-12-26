@@ -57,6 +57,7 @@ function onAddLine() {
     renderMeme()
 }
 
+
 function drawFrameOnLine() {
     const meme = getMeme()
     const selectedLine = meme.lines[meme.selectedLineIdx]
@@ -108,6 +109,7 @@ function onCanvasClick(ev) {
     
     
 }
+
 
 
 

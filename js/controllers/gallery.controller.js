@@ -11,25 +11,40 @@ function renderGallery(imgs = getImgs()) {
     elGallery.innerHTML = strHTML
 }
 
+function showGallery() {
+
+    document.querySelector('.search-input').value = ''
+    document.querySelector('.gallery-section').classList.remove('hidden')
+    document.querySelector('.editor-section').classList.add('hidden')
+    renderGallery()
+}
+
 function onImgSelect(imgId) {
     setImg(imgId)
     renderMeme()
     document.querySelector('.gallery-section').classList.add('hidden')
     document.querySelector('.editor-section').classList.remove('hidden')
-
 }
 
 function onFilterGallery() {
     const searchInput = document.querySelector('.search-input').value.toLowerCase()
-    console.log(searchInput)
     const elGallery = document.querySelector('.gallery-container')
-
     const imgs = getImgs()
-    console.log(imgs)
 
     const filteredImgs = imgs.filter(img =>
         img.keywords.join(' ').toLowerCase().includes(searchInput)
     )
     renderGallery(filteredImgs)
-    
 }
+
+function searchKeyword(keyword) {
+    const searchInput = document.querySelector('.search-input')
+    searchInput.value = keyword
+    onFilterGallery()
+}
+
+// function increaseFontSize(){
+//     const maxSize=2
+//     const fontSizeStep =0.1
+//     let newFontSize
+// }

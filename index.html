@@ -31,6 +31,13 @@
             <div class="search-imgs-container">
 
                 <input type="text" class="search-input" placeholder="Search images..." oninput="onFilterGallery()">
+                <div class="keyword-buttons">
+                    <button type="button" onclick="searchKeyword('funny')">Funny</button>
+                    <button type="button" onclick="searchKeyword('politics')">Politics</button>
+                    <button type="button" onclick="searchKeyword('baby')">Baby</button>
+                    <button type="button" onclick="searchKeyword('movie')">Movie</button>
+                    <button type="button" onclick="searchKeyword('laugh')">Laugh</button>
+                </div>
             </div>
             <div class="gallery-container flex wrap justify-center">
             </div>
@@ -54,7 +61,7 @@
                         <button onclick="onAddLine()" class="btn-editor btn-add-input">
                             <i class="fa-solid fa-plus"></i>
                         </button>
-                        <button class="btn-editor btn-delete-line" onclick="onDeleteLine()">
+                        <button onclick="onDeleteLine()" class="btn-editor btn-delete-line" onclick="onDeleteLine()">
                             <i class="fas fa-trash-alt"></i>
                         </button>
                     </div>

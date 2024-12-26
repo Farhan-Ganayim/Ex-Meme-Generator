@@ -85,11 +85,6 @@ function addLine() {
     renderMeme()
 
 }
-function showGallery() {
-    document.querySelector('.gallery-section').classList.remove('hidden');
-    document.querySelector('.editor-section').classList.add('hidden');
-    // Hide other sections if necessary
-}
 
 
 

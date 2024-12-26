@@ -1,0 +1,28 @@
+
+.search-imgs-container {
+    padding: 1em 0;
+}
+
+.search-imgs-container input {
+    border-radius: 1em;
+    height: 2.5em;
+    width: 50%;
+    border: none;
+}
+
+.keyword-buttons{
+    background-color: rgb(153, 150, 150);
+    width: 60%;
+    place-self: center;
+    margin-top: 1em;
+    padding: .5em 0;
+    border-radius: 2em;
+}
+.keyword-buttons button{
+    cursor: pointer;
+    color:white;
+    background-color: rgb(153, 150, 150);
+    border: none;
+    font-size: 1em;
+    font-family: Poppins-Light;
+}
