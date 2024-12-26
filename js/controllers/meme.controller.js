@@ -30,6 +30,9 @@ function renderMeme() {
         drawFrameOnLine()
     }
 }
+function onSaveMeme(){
+    saveMeme()
+}
 
 function onDownloadMeme(elLink) {
     const imgURL = gElCanvas.toDataURL('image/jpeg')
@@ -79,7 +82,7 @@ function drawFrameOnLine() {
 }
 
 function calcLineArea(line) {
-    
+
     if (!line) return { x: 0, y: 0, width: 0, height: 0 }
     gCtx.font = `${line.size}px Arial`
     const txtWidth = gCtx.measureText(line.txt).width
@@ -114,6 +117,21 @@ function onCanvasClick(ev) {
     console.log();
     console.log('delivery');
 
+
+}
+function onShowSaved(){
+    const savedMemes=loadFromStorage(MEMES_STORAGE_KEY) ||[]
+    const savedSection = document.querySelector('.saved-memes')
+    let strHTML=''
+    savedMemes.forEach(memeUrl=>{
+        strHTML+=`<img src="${memeUrl} alt="Saved Meme">`
+    })
+    savedSection.innerHTML=strHTML
+    savedSection.classList.remove('hidden')
+    console.log(savedMemes)
+    document.querySelector('.gallery-section').classList.add('hidden')
+    document.querySelector('.editor-section').classList.add('hidden')
+    
 
 }
 

@@ -12,12 +12,12 @@
 
 <body class="main-layout grid" onload="onInit()">
     <header class="main-header grid poppins-med justify-between align-center">
-        <h1 class="logo" onclick="showGallery()">Meme Generator</h1>
+        <h1 class="logo" onclick="onShowGallery()">Meme Generator</h1>
         <nav class="main-nav flex justify-center">
             <ul class="nav-links flex">
-                <li class="flex sss"><a href="#" onclick="showGallery()">Gallery</a></li>
-                <li><a href="#" onclick="showSaved()">Saved</a></li>
-                <li><a href="#" onclick="randomizeMeme()">Randomize</a></li>
+                <li class="flex sss"><a href="#" onclick="onShowGallery()">Gallery</a></li>
+                <li><a href="#" onclick="onShowSaved()">Saved</a></li>
+                <li><a href="#">Randomize</a></li>
             </ul>
         </nav>
         <select class="lang-select" onchange="changeLanguage()">
@@ -39,6 +39,9 @@
                     <button type="button" onclick="searchKeyword('laugh')">Laugh</button>
                 </div>
             </div>
+
+            <div class="saved-memes hidden"></div>
+
             <div class="gallery-container flex wrap justify-center">
             </div>
         </section>
@@ -124,6 +127,7 @@
     <script src="js/meme.service.js"></script>
     <script src="js/controllers/meme.controller.js"></script>
     <script src="js/controllers/gallery.controller.js"></script>
+    <script src="js/storage.service.js"></script>
 </body>
 
 </html>

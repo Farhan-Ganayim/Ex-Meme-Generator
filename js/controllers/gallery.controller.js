@@ -11,11 +11,12 @@ function renderGallery(imgs = getImgs()) {
     elGallery.innerHTML = strHTML
 }
 
-function showGallery() {
+function onShowGallery() {
 
     document.querySelector('.search-input').value = ''
     document.querySelector('.gallery-section').classList.remove('hidden')
     document.querySelector('.editor-section').classList.add('hidden')
+    document.querySelector('.saved-memes').classList.add('hidden')
     renderGallery()
 }
 
@@ -24,6 +25,7 @@ function onImgSelect(imgId) {
     renderMeme()
     document.querySelector('.gallery-section').classList.add('hidden')
     document.querySelector('.editor-section').classList.remove('hidden')
+     document.querySelector('.saved-memes').classList.add('hidden')
 }
 
 function onFilterGallery() {
