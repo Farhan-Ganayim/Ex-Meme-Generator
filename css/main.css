@@ -1,4 +1,3 @@
-
 /* Setup */
 
 @import 'setup/typography.css';
@@ -18,19 +17,11 @@
 
 @import 'setup/mq.css';
 
-.gallery-section{
-    text-align: center; 
+.gallery-section {
+    text-align: center;
 }
 
-.gallery-img{
+.gallery-img {
     width: 200px;
     height: auto;
-    background-repeat: 5px;
 }
-
-
-
-
-
-
-

@@ -1,23 +1,19 @@
-
-.gallery-section{
-
+.gallery-section {
     max-width: 60vw;
     place-self: center;
     background-color: #373b41;
     border-radius: 1em;
     padding-bottom: 1em;
-
-
 }
 
-.gallery-container{
+.gallery-container {
     gap: .5em;
 }
 
-.gallery-section .gallery-title{
+.gallery-section .gallery-title {
     padding-top: 3em;
-
 }
-.gallery-container img{
+
+.gallery-container img {
     border-radius: .7em;
 }

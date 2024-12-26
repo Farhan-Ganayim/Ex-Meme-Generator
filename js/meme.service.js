@@ -65,13 +65,11 @@ function changeFontSize(diff) {
 }
 
 function switchLine() {
-
     if (gMeme.selectedLineIdx === gMeme.lines.length - 1) gMeme.selectedLineIdx = 0
     else gMeme.selectedLineIdx++
 }
 
 function addLine() {
-
     const newLine = {
         txt: 'New Line',
         size: 35,
@@ -81,11 +79,11 @@ function addLine() {
             y: Math.random() * (gElCanvas.height),
         }
     }
+
     gMeme.lines.push(newLine)
     gMeme.selectedLineIdx = gMeme.lines.length - 1
     newLine.lineArea = calcLineArea(newLine)
     renderMeme()
-
 }
 function deleteLine() {
     // const meme = getMeme() 
@@ -93,13 +91,13 @@ function deleteLine() {
     gMeme.selectedLineIdx--
     renderMeme()
 }
+
 function saveMeme() {
     const memeUrl = gElCanvas.toDataURL('image/jpeg')
     const savedMemes = loadFromStorage(MEMES_STORAGE_KEY) || []
     savedMemes.push(memeUrl)
     saveToStorage(MEMES_STORAGE_KEY, savedMemes)
     console.log('Saved Memes:', savedMemes)
-
 }
 
 

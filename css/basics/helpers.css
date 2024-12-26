@@ -6,6 +6,7 @@
 .grid {
     display: grid;
 }
+
 .grid.justify-center {
     justify-content: center;
 }
@@ -18,7 +19,7 @@
     justify-content: center;
 }
 
-.place-center{
+.place-center {
     place-self: center;
 }
 
@@ -29,7 +30,8 @@
 .flex.align-center {
     align-items: center;
 }
-.flex.flex-column{
+
+.flex.flex-column {
     flex-direction: column;
 }
 
@@ -44,6 +46,7 @@
 .poppins-med {
     font-family: Poppins-Medium;
 }
+
 .poppins-ita {
     font-family: Poppins-Italic;
 }

@@ -11,10 +11,12 @@
     font-family: Lato;
     src: url(/fonts/Lato/Lato-Bold.ttf);
 }
+
 @font-face {
     font-family: Poppins-Medium;
     src: url(/fonts/poppins/Poppins-Medium.ttf);
 }
+
 @font-face {
     font-family: Poppins-Italic;
     src: url(/fonts/poppins/Poppins-Italic.ttf);

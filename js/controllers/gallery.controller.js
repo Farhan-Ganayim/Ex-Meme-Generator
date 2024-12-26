@@ -2,7 +2,6 @@
 
 
 function renderGallery(imgs = getImgs()) {
-
     const elGallery = document.querySelector('.gallery-container')
     const strHTML = imgs.map(img => {
         return `<img src="${img.url}" class="gallery-img" onclick="onImgSelect(${img.id})" />`;
@@ -12,7 +11,6 @@ function renderGallery(imgs = getImgs()) {
 }
 
 function onShowGallery() {
-
     document.querySelector('.search-input').value = ''
     document.querySelector('.gallery-section').classList.remove('hidden')
     document.querySelector('.editor-section').classList.add('hidden')
@@ -25,14 +23,13 @@ function onImgSelect(imgId) {
     renderMeme()
     document.querySelector('.gallery-section').classList.add('hidden')
     document.querySelector('.editor-section').classList.remove('hidden')
-     document.querySelector('.saved-memes').classList.add('hidden')
+    document.querySelector('.saved-memes').classList.add('hidden')
 }
 
 function onFilterGallery() {
     const searchInput = document.querySelector('.search-input').value.toLowerCase()
     const elGallery = document.querySelector('.gallery-container')
     const imgs = getImgs()
-
     const filteredImgs = imgs.filter(img =>
         img.keywords.join(' ').toLowerCase().includes(searchInput)
     )

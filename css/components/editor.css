@@ -66,7 +66,6 @@
     margin: 0 2em;
     border-radius: 1em;
     box-sizing: border-box;
-
 }
 
 .font-controls .btn-font {
@@ -84,7 +83,6 @@
 
 .font-controls .btn-font:hover {
     background-color: #acb0b4;
-
 }
 
 .stroke-color-def,
@@ -102,30 +100,30 @@
 .stroke-btn {
     height: 4em;
 }
-.editor-actions-container{
+
+.editor-actions-container {
     gap: 1em;
     margin: 1em;
     font-family: Lato;
-
 }
-.editor-actions-container a{
+
+.editor-actions-container a {
     margin-inline: .5em;
     padding: .5em 1.5em;
     border-radius: 1em;
 }
 
-.editor-actions-container .btn-save{
+.editor-actions-container .btn-save {
     background-color: #63a8e9;
     color: white;
 }
-.editor-actions-container .btn-share{
+
+.editor-actions-container .btn-share {
     background-color: #7eceb0;
     color: white;
-
 }
-.editor-actions-container .btn-download{
+
+.editor-actions-container .btn-download {
     background-color: #b863e9;
     color: white;
-
-
 }
