@@ -2,7 +2,6 @@
 /* Setup */
 
 @import 'setup/typography.css';
-@import 'setup/mq.css';
 
 /* Basics */
 @import 'basics/base.css';
@@ -15,7 +14,9 @@
 @import 'components/editor.css';
 @import 'components/footer.css';
 @import 'components/searchImgs.css';
+@import 'components/saved.css';
 
+@import 'setup/mq.css';
 
 .gallery-section{
     text-align: center; 

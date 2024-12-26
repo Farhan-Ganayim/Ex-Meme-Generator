@@ -27,6 +27,7 @@
     </header>
 
     <main>
+        <div class="saved-memes hidden flex justify-center"></div>
         <section class="gallery-section ">
             <div class="search-imgs-container">
 
@@ -39,8 +40,6 @@
                     <button type="button" onclick="searchKeyword('laugh')">Laugh</button>
                 </div>
             </div>
-
-            <div class="saved-memes hidden"></div>
 
             <div class="gallery-container flex wrap justify-center">
             </div>
@@ -101,13 +100,13 @@
                         </button>
                     </div>
                     <div class="editor-actions-container flex place-center">
-                        <a href="#" onclick="onSaveMeme()" class="btn-save" title="Save">
+                        <a href="#" onclick="onSaveMeme()" class="save-btns btn-save" title="Save">
                             <i class="fas fa-save"></i> Save
                         </a>
-                        <a href="#" onclick="onShareMeme()" class="btn-share" title="Share">
+                        <a href="#" onclick="onShareMeme()" class="save-btns btn-share" title="Share">
                             <i class="fas fa-share"></i> Share
                         </a>
-                        <a href="#" onclick="onDownloadMeme(this)" download="meme.jpg" class="btn-download"
+                        <a href="#" onclick="onDownloadMeme(this)" download="meme.jpg" class="save-btns btn-download"
                             title="Download">
                             <i class="fas fa-download"></i> Download
                         </a>
@@ -125,9 +124,9 @@
 
     <script src="js/main.js"></script>
     <script src="js/meme.service.js"></script>
+    <script src="js/storage.service.js"></script>
     <script src="js/controllers/meme.controller.js"></script>
     <script src="js/controllers/gallery.controller.js"></script>
-    <script src="js/storage.service.js"></script>
 </body>
 
 </html>

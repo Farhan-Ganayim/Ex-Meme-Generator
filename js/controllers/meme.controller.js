@@ -30,7 +30,7 @@ function renderMeme() {
         drawFrameOnLine()
     }
 }
-function onSaveMeme(){
+function onSaveMeme() {
     saveMeme()
 }
 
@@ -119,19 +119,19 @@ function onCanvasClick(ev) {
 
 
 }
-function onShowSaved(){
-    const savedMemes=loadFromStorage(MEMES_STORAGE_KEY) ||[]
+function onShowSaved() {
+    const savedMemes = loadFromStorage(MEMES_STORAGE_KEY) || []
     const savedSection = document.querySelector('.saved-memes')
-    let strHTML=''
-    savedMemes.forEach(memeUrl=>{
-        strHTML+=`<img src="${memeUrl} alt="Saved Meme">`
+    let strHTML =''
+    savedMemes.forEach(memeUrl => {
+        strHTML += `<img src="${memeUrl}" alt="Saved Meme">`
     })
-    savedSection.innerHTML=strHTML
+    savedSection.innerHTML = strHTML
     savedSection.classList.remove('hidden')
     console.log(savedMemes)
     document.querySelector('.gallery-section').classList.add('hidden')
     document.querySelector('.editor-section').classList.add('hidden')
-    
+
 
 }
 

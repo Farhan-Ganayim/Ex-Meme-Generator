@@ -1,0 +1,8 @@
+.saved-memes {
+    gap: 1em;
+}
+
+.saved-memes img {
+    height: 20em;
+    width: 20em;
+}

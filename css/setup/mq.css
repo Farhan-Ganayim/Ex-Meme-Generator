@@ -1,0 +1,61 @@
+@media (width< 1600px) {
+    .gallery-section {
+        max-width: 90vw;
+    }
+}
+
+@media (width< 980px) {
+
+    .editor-section {
+        grid-auto-flow: row;
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+    .editor-container {
+        max-height: 100%;
+    }
+    .meme-canvas {
+        width: 50%;
+        max-width: 50%;
+    }
+    .txt-input {
+        height: 2em;
+    }
+    .font-controls {
+        width: 80%;
+        height: 90%;
+    }
+    .btn-font {
+        height: 80%;
+        padding: .5em .1em;
+    }
+    .editor-actions-container {
+        margin: .2em;
+    }
+}
+
+
+@media (width< 750px) {
+    .meme-canvas {
+        width: 70%;
+        max-width: 70%;
+    }
+}
+
+@media (width< 500px) {
+    .font-controls {
+        height: 100%;
+    }
+    .meme-canvas {
+        width: 80%;
+        max-width: 80%;
+    }
+    .save-btns {
+        padding: .3em 1em;
+        color: aqua;
+    }
+    .editor-actions-container {
+        gap: 0;
+    }
+
+}
