@@ -24,7 +24,6 @@ function renderMeme() {
         meme.lines.forEach(line => {
             gCtx.font = `${line.size}px Arial`
             gCtx.fillStyle = line.color
-            // gCtx.textAlign = 'center'
             gCtx.fillText(line.txt, line.pos.x, line.pos.y)
             line.lineArea = calcLineArea(line)
         })

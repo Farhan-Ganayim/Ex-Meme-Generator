@@ -28,7 +28,12 @@
 
     <main>
         <section class="gallery-section ">
-            <div class="gallery-container flex wrap justify-center"></div>
+            <div class="search-imgs-container">
+
+                <input type="text" class="search-input" placeholder="Search images..." oninput="onFilterGallery()">
+            </div>
+            <div class="gallery-container flex wrap justify-center">
+            </div>
         </section>
         <section class="editor-section grid justify-center hidden">
             <canvas class="meme-canvas" width="500" height="500"></canvas>
