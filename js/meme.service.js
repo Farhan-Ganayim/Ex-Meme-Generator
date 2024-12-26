@@ -85,6 +85,12 @@ function addLine() {
     renderMeme()
 
 }
+function deleteLine(){
+    // const meme = getMeme() 
+    gMeme.lines.splice(gMeme.selectedLineIdx, 1)
+    gMeme.selectedLineIdx--
+    renderMeme()
+}
 
 
 

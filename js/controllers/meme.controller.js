@@ -52,16 +52,21 @@ function onSwitchLine() {
 }
 function onAddLine() {
     addLine()
-    // switchLine()
+    renderMeme()
+}
 
+function onDeleteLine() {
+    deleteLine()
     renderMeme()
 }
 
 
 function drawFrameOnLine() {
     const meme = getMeme()
+    if (meme.lines.length === 0) return
+
     const selectedLine = meme.lines[meme.selectedLineIdx]
-     selectedLine.lineArea=calcLineArea(selectedLine)
+    selectedLine.lineArea = calcLineArea(selectedLine)
 
     gCtx.strokeStyle = 'green'
     gCtx.lineWidth = 3
@@ -73,15 +78,17 @@ function drawFrameOnLine() {
     )
 }
 
-function calcLineArea(line){
-    gCtx.font=`${line.size}px Arial`
+function calcLineArea(line) {
+    
+    if (!line) return { x: 0, y: 0, width: 0, height: 0 }
+    gCtx.font = `${line.size}px Arial`
     const txtWidth = gCtx.measureText(line.txt).width
     const txtHeight = line.size
-    return{
-        x:line.pos.x-10,
-        y:line.pos.y-txtHeight-2,
-        width:txtWidth+20,
-        height:txtHeight+10
+    return {
+        x: line.pos.x - 10,
+        y: line.pos.y - txtHeight - 2,
+        width: txtWidth + 20,
+        height: txtHeight + 10
     }
 }
 
@@ -106,8 +113,8 @@ function onCanvasClick(ev) {
     }
     console.log();
     console.log('delivery');
-    
-    
+
+
 }
 
 
