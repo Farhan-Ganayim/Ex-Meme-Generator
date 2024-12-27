@@ -2,66 +2,177 @@
     .gallery-section {
         max-width: 90vw;
     }
+
+    .editor-container {
+        align-self: center;
+    }
+
+    .editor-input-container {
+        margin-top: 1em;
+    }
+
+    .line-controls {
+        margin: .5em
+    }
 }
 
-@media (width < 980px) {
+@media (width < 1200px) {
+    .meme-canvas {
+        width: 100%;
+    }
+}
+
+@media (width < 1000px) {
     .editor-section {
         grid-auto-flow: row;
-        grid-template-columns: 1fr;
         justify-items: center;
+        gap: .5em;
+    }
+
+    .canvas-container {
+        width: 60vw;
     }
 
     .editor-container {
-        max-height: 100%;
-    }
+        margin-top: 1em;
+        height: 100%;
 
-    .meme-canvas {
-        width: 50%;
-        max-width: 50%;
-    }
+        .meme-canvas {
+            width: 100%;
+        }
 
-    .txt-input {
-        height: 2em;
-    }
+        .editor-input-container {
+            .txt-input {
+                height: 2em;
+                width: 20em;
+            }
+        }
 
-    .font-controls {
-        width: 80%;
-        height: 90%;
-    }
-
-    .btn-font {
-        height: 80%;
-        padding: .5em .1em;
+        .btn-font {
+            height: 80%;
+            padding: .5em .1em;
+        }
     }
 
     .editor-actions-container {
         margin: .2em;
     }
-}
 
-@media (width < 750px) {
-    .meme-canvas {
-        width: 70%;
-        max-width: 70%;
+    .main-footer {
+        margin: 1em;
     }
 }
 
-@media (width < 500px) {
-    .font-controls {
-        height: 100%;
+
+@media (width < 800px) {
+
+    .main-header {
+        padding: .5em .8em;
+        margin-bottom: 1em;
+
+        .logo {
+            font-size: 1.4em;
+        }
+
+        .nav-links {
+            gap: .3em;
+            justify-content: center;
+        }
     }
 
-    .meme-canvas {
-        width: 80%;
-        max-width: 80%;
+    .gallery-container img {
+        width: 150px;
+    }
+
+
+    .canvas-container {
+        width: 80vw;
+    }
+
+    .editor-container {
+        margin-top: 0;
+        padding: .5em 0;
+    }
+
+    .editor-section {
+        place-self: center;
+        width: 85vw;
     }
 
     .editor-actions-container {
         gap: 0;
     }
 
-    /* .gallery-img{
-        width: 300px;
-        height: auto;
-    } */
+    .font-controls {
+        height: 100%;
+
+        .btn-font {
+            padding: .5em 0;
+        }
+
+        .font-select {
+            height: 2.5em;
+        }
+
+        .fill-btn {
+            height: 3em;
+        }
+    }
+
+    .stroke-btn {
+        height: 3em;
+    }
+}
+
+@media (width < 500px) {
+    .gallery-container img {
+        width: 100px;
+    }
+
+    .main-nav a {
+        font-size: 1em;
+    }
+
+    .canvas-container {
+        margin-top: 1em;
+        width: 90vw;
+
+        .meme-canvas {
+            width: 100%;
+        }
+    }
+
+    .editor-actions-container {
+        margin: 0;
+        padding: .1em 0;
+        margin-top: .5em;
+        gap: .4em;
+    }
+
+    .editor-actions-container a {
+        padding: .2em .7em;
+        margin-inline: 0;
+    }
+
+    .editor-input-container .txt-input {
+        width: 15em;
+    }
+
+    .editor-section {
+        width: 90vw;
+    }
+
+    .stroke-color-def {
+        height: 0;
+    }
+
+    .font-controls .btn-font {
+        font-size: .85em;
+    }
+}
+
+@media (width < 350px) {
+    .gallery-container img {
+        width: 80px;
+    }
 }

@@ -45,7 +45,9 @@
             </div>
         </section>
         <section class="editor-section grid justify-center hidden">
-            <canvas class="meme-canvas" width="500" height="500"></canvas>
+            <div class="canvas-container">
+                <canvas class="meme-canvas" width="500" height="500"></canvas>
+            </div>
             <div class="editor-container grid">
                 <div class="editor-input-container flex">
                     <form class="txt-controls" onsubmit="onTextSubmit(event)">
@@ -54,7 +56,7 @@
                     </form>
                 </div>
 
-                <div class="editor-controls-container grid">
+                <!-- <div class="editor-controls-container grid"> -->
                     <div class="line-controls flex place-center">
                         <button onclick="onSwitchLine()" class="btn-editor btn-switch-inputs">
                             <i class="fa-solid fa-arrow-up-long"></i>
@@ -111,13 +113,13 @@
                             <i class="fas fa-download"></i> Download
                         </a>
                     </div>
-                </div>
+                <!-- </div> -->
 
 
             </div>
         </section>
     </main>
-    <footer class="poppins-ita">
+    <footer class="main-footer poppins-ita">
         © Meme Generator 2024
     </footer>
 
