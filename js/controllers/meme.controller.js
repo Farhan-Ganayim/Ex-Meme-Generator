@@ -2,6 +2,7 @@
 
 let gElCanvas
 let gCtx
+let gStartPos = null
 
 function onInit() {
     gElCanvas = document.querySelector('.meme-canvas')
@@ -169,6 +170,8 @@ function onLineUp() {
     const meme = getMeme()
     const selectedLine = meme.lines[meme.selectedLineIdx]
     selectedLine.isDrag = false
+    document.body.style.cursor = 'grab'
+    gStartPos = null
 }
 
 function getEvPos(ev) {
