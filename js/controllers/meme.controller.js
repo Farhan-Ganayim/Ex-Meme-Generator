@@ -107,6 +107,7 @@ function calcLineArea(line) {
 }
 
 function onCanvasClick(ev) {
+    
     const { offsetX, offsetY } = ev
     const meme = getMeme()
 
