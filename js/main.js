@@ -1,13 +1,14 @@
 
-function onTextInput(text) {
-    setLineTxt(text)
-    renderMeme()
+const TOUCH_EVS = ['touchstart', 'touchmove', 'touchend']
+
+function addMouseListeners() {
+    gElCanvas.addEventListener('mousedown', onLineDown)
+    gElCanvas.addEventListener('mousemove', onLineMove)
+    gElCanvas.addEventListener('mouseup', onLineUp)
 }
 
-function onTextSubmit(ev) {
-    ev.preventDefault()
-    const text = ev.target.querySelector('.txt-input').value
-    setLineTxt(text)
-    renderMeme()
-    ev.target.querySelector('.txt-input').value = ''
+function addTouchListeners() {
+    gElCanvas.addEventListener('touchstart', onLineDown)
+    gElCanvas.addEventListener('touchmove', onLineMove)
+    gElCanvas.addEventListener('touchend', onLineUp)
 }

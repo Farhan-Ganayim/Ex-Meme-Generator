@@ -4,13 +4,13 @@ let gElCanvas
 let gCtx
 
 function onInit() {
-
     gElCanvas = document.querySelector('.meme-canvas')
     gCtx = gElCanvas.getContext('2d')
     gElCanvas.addEventListener('click', onCanvasClick)
-
     renderGallery()
     renderMeme()
+    addMouseListeners()
+    addTouchListeners()
 }
 
 function renderMeme() {
@@ -32,6 +32,19 @@ function renderMeme() {
 
 function onSaveMeme() {
     saveMeme()
+}
+
+function onTextInput(text) {
+    setLineTxt(text)
+    renderMeme()
+}
+
+function onTextSubmit(ev) {
+    ev.preventDefault()
+    const text = ev.target.querySelector('.txt-input').value
+    setLineTxt(text)
+    renderMeme()
+    ev.target.querySelector('.txt-input').value = ''
 }
 
 function onDownloadMeme(elLink) {
@@ -64,14 +77,11 @@ function onDeleteLine() {
     renderMeme()
 }
 
-
 function drawFrameOnLine() {
     const meme = getMeme()
     if (meme.lines.length === 0) return
-
     const selectedLine = meme.lines[meme.selectedLineIdx]
     selectedLine.lineArea = calcLineArea(selectedLine)
-
     gCtx.strokeStyle = 'green'
     gCtx.lineWidth = 3
     gCtx.strokeRect(
@@ -128,8 +138,53 @@ function onShowSaved() {
     console.log(savedMemes)
     document.querySelector('.gallery-section').classList.add('hidden')
     document.querySelector('.editor-section').classList.add('hidden')
+}
 
+function onLineDown(ev) {
+    onCanvasClick(ev)
+    const meme = getMeme()
+    const selectedLine = meme.lines[meme.selectedLineIdx]
 
+    if (!selectedLine) return
+    selectedLine.startPos = getEvPos(ev)
+    selectedLine.isDrag = true
+    document.body.style.cursor = 'grabbing'
+}
+
+function onLineMove(ev) {
+    const meme = getMeme()
+    const selectedLine = meme.lines[meme.selectedLineIdx]
+
+    if (!selectedLine || !selectedLine.isDrag) return
+    const currentPos = getEvPos(ev)
+    const dx = currentPos.x - selectedLine.startPos.x
+    const dy = currentPos.y - selectedLine.startPos.y
+    selectedLine.pos.x += dx
+    selectedLine.pos.y += dy
+    selectedLine.startPos = currentPos
+    renderMeme()
+}
+
+function onLineUp() {
+    const meme = getMeme()
+    const selectedLine = meme.lines[meme.selectedLineIdx]
+    selectedLine.isDrag = false
+}
+
+function getEvPos(ev) {
+    let pos = {
+        x: ev.offsetX,
+        y: ev.offsetY,
+    }
+    if (TOUCH_EVS.includes(ev.type)) {
+        ev.preventDefault()
+        ev = ev.changedTouches[0]
+        pos = {
+            x: touch.pageX - ev.target.offsetLeft - ev.target.clientLeft,
+            y: touch.pageY - ev.target.offsetTop - ev.target.clientTop,
+        }
+    }
+    return pos
 }
 
 
