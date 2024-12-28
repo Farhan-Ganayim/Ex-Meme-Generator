@@ -23,6 +23,10 @@
 }
 
 @media (width < 1000px) {
+    .main-header {
+        margin-bottom: 2em;
+    }
+
     .editor-section {
         grid-auto-flow: row;
         justify-items: center;
@@ -30,7 +34,7 @@
     }
 
     .canvas-container {
-        width: 60vw;
+        width: 50vw;
     }
 
     .editor-container {
@@ -84,9 +88,8 @@
         width: 150px;
     }
 
-
     .canvas-container {
-        width: 80vw;
+        width: 65vw;
     }
 
     .editor-container {
@@ -147,11 +150,11 @@
         padding: .1em 0;
         margin-top: .5em;
         gap: .4em;
-    }
 
-    .editor-actions-container a {
-        padding: .2em .7em;
-        margin-inline: 0;
+        a {
+            padding: .2em .7em;
+            margin-inline: 0;
+        }
     }
 
     .editor-input-container .txt-input {
