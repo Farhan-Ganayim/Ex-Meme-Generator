@@ -1,6 +1,6 @@
 @media (width< 1600px) {
     .gallery-section {
-        max-width: 90vw;
+        max-width: 70vw;
     }
 
     .editor-container {
@@ -17,12 +17,18 @@
 }
 
 @media (width < 1200px) {
+    .gallery-section {
+        max-width: 80vw;
+    }
     .meme-canvas {
         width: 100%;
     }
 }
 
 @media (width < 1000px) {
+    .gallery-section {
+        max-width: 90vw;
+    }
     .main-header {
         margin-bottom: 2em;
     }
