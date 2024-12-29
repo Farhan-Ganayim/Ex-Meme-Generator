@@ -82,7 +82,7 @@ function drawFrameOnLine() {
     const meme = getMeme()
     if (meme.lines.length === 0) return
     const selectedLine = meme.lines[meme.selectedLineIdx]
-    selectedLine.lineArea = calcLineArea(selectedLine)
+    // selectedLine.lineArea = calcLineArea(selectedLine)
     gCtx.strokeStyle = 'green'
     gCtx.lineWidth = 3
     gCtx.strokeRect(
@@ -94,7 +94,7 @@ function drawFrameOnLine() {
 }
 
 function calcLineArea(line) {
-    if (!line) return { x: 0, y: 0, width: 0, height: 0 }
+    // if (!line) return { x: 0, y: 0, width: 0, height: 0 }
     gCtx.font = `${line.size}px Arial`
     const txtWidth = gCtx.measureText(line.txt).width
     const txtHeight = line.size
@@ -107,7 +107,6 @@ function calcLineArea(line) {
 }
 
 function onCanvasClick(ev) {
-    
     const { offsetX, offsetY } = ev
     const meme = getMeme()
 
@@ -121,7 +120,6 @@ function onCanvasClick(ev) {
             offsetY <= lineClickArea.y + lineClickArea.height
         )
     })
-
     if (clickedLineIdx !== -1) {
         meme.selectedLineIdx = clickedLineIdx
         renderMeme()
@@ -143,27 +141,35 @@ function onShowSaved() {
 }
 
 function onLineDown(ev) {
-    onCanvasClick(ev)
+    const { offsetX, offsetY } = ev
     const meme = getMeme()
     const selectedLine = meme.lines[meme.selectedLineIdx]
 
     if (!selectedLine) return
-    selectedLine.startPos = getEvPos(ev)
-    selectedLine.isDrag = true
-    document.body.style.cursor = 'grabbing'
+    const lineArea = calcLineArea(selectedLine)
+    if (
+        offsetX >= lineArea.x &&
+        offsetX <= lineArea.x + lineArea.width &&
+        offsetY >= lineArea.y &&
+        offsetY <= lineArea.y + lineArea.height
+    ) {
+        gStartPos = getEvPos(ev)
+        selectedLine.isDrag = true
+        document.body.style.cursor = 'grabbing'
+    }
 }
 
 function onLineMove(ev) {
     const meme = getMeme()
     const selectedLine = meme.lines[meme.selectedLineIdx]
 
-    if (!selectedLine || !selectedLine.isDrag) return
+    if (!selectedLine.isDrag) return
     const currentPos = getEvPos(ev)
-    const dx = currentPos.x - selectedLine.startPos.x
-    const dy = currentPos.y - selectedLine.startPos.y
+    const dx = currentPos.x - gStartPos.x
+    const dy = currentPos.y - gStartPos.y
     selectedLine.pos.x += dx
     selectedLine.pos.y += dy
-    selectedLine.startPos = currentPos
+    gStartPos = currentPos
     renderMeme()
 }
 
@@ -189,6 +195,17 @@ function getEvPos(ev) {
         }
     }
     return pos
+}
+
+function onLeaveCanvas() {
+    const meme = getMeme()
+    const selectedLine = meme.lines[meme.selectedLineIdx]
+    selectedLine.isDrag = false
+    document.body.style.cursor = 'default'
+}
+
+function onEnterCanvas() {
+    document.body.style.cursor = 'grab'
 }
 
 
