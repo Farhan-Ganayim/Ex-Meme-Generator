@@ -190,8 +190,8 @@ function getEvPos(ev) {
         ev.preventDefault()
         ev = ev.changedTouches[0]
         pos = {
-            x: touch.pageX - ev.target.offsetLeft - ev.target.clientLeft,
-            y: touch.pageY - ev.target.offsetTop - ev.target.clientTop,
+            x: ev.pageX - ev.target.offsetLeft - ev.target.clientLeft,
+            y: ev.pageY - ev.target.offsetTop - ev.target.clientTop,
         }
     }
     return pos
