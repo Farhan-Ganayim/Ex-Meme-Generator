@@ -9,7 +9,7 @@ function onInit() {
     gCtx = gElCanvas.getContext('2d')
     gElCanvas.addEventListener('click', onCanvasClick)
     renderGallery()
-    renderMeme()
+    // renderMeme()
     addMouseListeners()
     addTouchListeners()
 }
@@ -31,6 +31,9 @@ function renderMeme() {
         drawFrameOnLine()
     }
 }
+function onSelectRandomImg(){
+    onImgSelect(getRandomIntInclusive(1,getImgs().length))
+}
 
 function onSaveMeme() {
     saveMeme()
@@ -46,7 +49,6 @@ function onTextSubmit(ev) {
     const text = ev.target.querySelector('.txt-input').value
     setLineTxt(text)
     renderMeme()
-    // ev.target.querySelector('.txt-input').value = ''
 }
 
 function onDownloadMeme(elLink) {

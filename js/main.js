@@ -14,3 +14,21 @@ function addTouchListeners() {
     gElCanvas.addEventListener('touchmove', onLineMove)
     gElCanvas.addEventListener('touchend', onLineUp)
 }
+
+function loadImageFromInput(ev, onImageReady) {
+    document.querySelector('.share-container').innerHTML = ''
+    const reader = new FileReader()
+
+    reader.onload = function (event) {
+        const img = new Image()
+        img.onload = () => {
+            onImageReady(img)
+        }
+        img.src = event.target.result
+    }
+    reader.readAsDataURL(ev.target.files[0])
+}
+
+// function addToGallery(){
+
+// }

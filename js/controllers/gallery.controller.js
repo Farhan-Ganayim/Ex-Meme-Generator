@@ -24,6 +24,9 @@ function onImgSelect(imgId) {
     document.querySelector('.editor-section').classList.remove('hidden')
     document.querySelector('.saved-memes').classList.add('hidden')
 }
+function onImgInput() {
+    loadImageFromInput(ev, addToGallery)
+}
 
 function onFilterGallery() {
     const searchInput = document.querySelector('.search-input').value.toLowerCase()
