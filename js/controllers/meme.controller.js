@@ -208,7 +208,7 @@ function enterCanvas() {
 }
 
 function onAlignLeft() {
-    alignLineLeft()    
+    alignLineLeft()
     renderMeme()
 }
 
@@ -221,9 +221,26 @@ function onAlignRight() {
     alignLineRight()
     renderMeme()
 }
-function onChangeFont(font){
+function onChangeFont(font) {
     changeLineFont(font)
     renderMeme()
+}
+
+function onShareMeme(ev) {
+    ev.preventDefault()
+    const canvasData = gElCanvas.toDataURL('image/jpeg')
+
+    // After a succesful upload, allow the user to share on Facebook
+    function onSuccess(uploadedImgUrl) {
+        const encodedUploadedImgUrl = encodeURIComponent(uploadedImgUrl)
+        console.log('encodedUploadedImgUrl:', encodedUploadedImgUrl)
+        document.querySelector('.share-container').innerHTML = `
+        <a href="${uploadedImgUrl}">My meme: </a>
+           <button class="btn-facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=${encodedUploadedImgUrl}&t=${encodedUploadedImgUrl}')">
+           Share on Facebook  
+        </button>`
+    }
+    shareMeme(canvasData, onSuccess)
 }
 
 

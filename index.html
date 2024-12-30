@@ -41,6 +41,7 @@
                 </div>
             </div>
 
+            <!-- <input type="file" id="uploadImg" onchange="onImgInput(event)"> -->
             <div class="gallery-container flex wrap justify-center">
             </div>
         </section>
@@ -104,7 +105,7 @@
                     <a href="#" onclick="onSaveMeme()" class="save-btns btn-save" title="Save">
                         <i class="fas fa-save"></i> Save
                     </a>
-                    <a href="#" onclick="onShareMeme()" class="save-btns btn-share" title="Share">
+                    <a href="#" onclick="onShareMeme(event)" class="save-btns btn-share" title="Share">
                         <i class="fas fa-share"></i> Share
                     </a>
                     <a href="#" onclick="onDownloadMeme(this)" download="meme.jpg" class="save-btns btn-download"
@@ -112,6 +113,7 @@
                         <i class="fas fa-download"></i> Download
                     </a>
                 </div>
+                <div class="share-container flex justify-center poppins-ita"></div>
             </div>
         </section>
     </main>
