@@ -84,6 +84,10 @@
         .nav-links {
             gap: .3em;
             justify-content: center;
+
+            a {
+                font-size: 1em;
+            }
         }
     }
 
