@@ -20,6 +20,7 @@
     .gallery-section {
         max-width: 80vw;
     }
+
     .meme-canvas {
         width: 100%;
     }
@@ -29,6 +30,7 @@
     .gallery-section {
         max-width: 90vw;
     }
+
     .main-header {
         margin-bottom: 2em;
     }
@@ -46,10 +48,6 @@
     .editor-container {
         margin-top: 1em;
         height: 100%;
-
-        .meme-canvas {
-            width: 100%;
-        }
 
         .editor-input-container {
             .txt-input {
@@ -72,7 +70,6 @@
         margin: 1em;
     }
 }
-
 
 @media (width < 800px) {
 

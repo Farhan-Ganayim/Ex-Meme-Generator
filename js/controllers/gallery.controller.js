@@ -1,6 +1,5 @@
 'use strict'
 
-
 function renderGallery(imgs = getImgs()) {
     const elGallery = document.querySelector('.gallery-container')
     const strHTML = imgs.map(img => {
@@ -28,7 +27,6 @@ function onImgSelect(imgId) {
 
 function onFilterGallery() {
     const searchInput = document.querySelector('.search-input').value.toLowerCase()
-    const elGallery = document.querySelector('.gallery-container')
     const imgs = getImgs()
     const filteredImgs = imgs.filter(img =>
         img.keywords.join(' ').toLowerCase().includes(searchInput)

@@ -5,8 +5,8 @@ function addMouseListeners() {
     gElCanvas.addEventListener('mousedown', onLineDown)
     gElCanvas.addEventListener('mousemove', onLineMove)
     gElCanvas.addEventListener('mouseup', onLineUp)
-    gElCanvas.addEventListener('mouseleave', onLeaveCanvas)
-    gElCanvas.addEventListener('mouseenter', onEnterCanvas)
+    gElCanvas.addEventListener('mouseleave', leaveCanvas)
+    gElCanvas.addEventListener('mouseenter', enterCanvas)
 }
 
 function addTouchListeners() {

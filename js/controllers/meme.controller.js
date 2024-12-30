@@ -22,7 +22,8 @@ function renderMeme() {
     img.onload = () => {
         gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
         meme.lines.forEach(line => {
-            gCtx.font = `${line.size}px Arial`
+            const fontFamily = line.font || 'Arial'
+            gCtx.font = `${line.size}px ${fontFamily}`
             gCtx.fillStyle = line.color
             gCtx.fillText(line.txt, line.pos.x, line.pos.y)
             line.lineArea = calcLineArea(line)
@@ -45,7 +46,7 @@ function onTextSubmit(ev) {
     const text = ev.target.querySelector('.txt-input').value
     setLineTxt(text)
     renderMeme()
-    ev.target.querySelector('.txt-input').value = ''
+    // ev.target.querySelector('.txt-input').value = ''
 }
 
 function onDownloadMeme(elLink) {
@@ -82,7 +83,6 @@ function drawFrameOnLine() {
     const meme = getMeme()
     if (meme.lines.length === 0) return
     const selectedLine = meme.lines[meme.selectedLineIdx]
-    // selectedLine.lineArea = calcLineArea(selectedLine)
     gCtx.strokeStyle = 'green'
     gCtx.lineWidth = 3
     gCtx.strokeRect(
@@ -94,7 +94,6 @@ function drawFrameOnLine() {
 }
 
 function calcLineArea(line) {
-    // if (!line) return { x: 0, y: 0, width: 0, height: 0 }
     gCtx.font = `${line.size}px Arial`
     const txtWidth = gCtx.measureText(line.txt).width
     const txtHeight = line.size
@@ -135,7 +134,7 @@ function onShowSaved() {
     })
     savedSection.innerHTML = strHTML
     savedSection.classList.remove('hidden')
-    console.log(savedMemes)
+    // console.log(savedMemes)
     document.querySelector('.gallery-section').classList.add('hidden')
     document.querySelector('.editor-section').classList.add('hidden')
 }
@@ -197,15 +196,34 @@ function getEvPos(ev) {
     return pos
 }
 
-function onLeaveCanvas() {
+function leaveCanvas() {
     const meme = getMeme()
     const selectedLine = meme.lines[meme.selectedLineIdx]
     selectedLine.isDrag = false
     document.body.style.cursor = 'default'
 }
 
-function onEnterCanvas() {
+function enterCanvas() {
     document.body.style.cursor = 'grab'
+}
+
+function onAlignLeft() {
+    alignLineLeft()    
+    renderMeme()
+}
+
+function onAlignCenter() {
+    alignLineCenter()
+    renderMeme()
+}
+
+function onAlignRight() {
+    alignLineRight()
+    renderMeme()
+}
+function onChangeFont(font){
+    changeLineFont(font)
+    renderMeme()
 }
 
 

@@ -1,10 +1,4 @@
 
-
-@font-face {
-    font-family: Lato;
-    src: url(/fonts/Lato/Lato-Bold.ttf);
-}
-
 @font-face {
     font-family: Poppins-Medium;
     src: url(/fonts/poppins/Poppins-Medium.ttf);
@@ -19,6 +13,11 @@
     font-family: Poppins-Light;
     src: url(/fonts/poppins/Poppins-Light.ttf);
 
+}
+
+@font-face {
+    font-family: Lato;
+    src: url(/fonts/Lato/Lato-Bold.ttf);
 }
 
 @font-face {

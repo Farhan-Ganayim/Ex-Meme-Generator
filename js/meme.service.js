@@ -99,5 +99,29 @@ function saveMeme() {
     console.log('Saved Memes:', savedMemes)
 }
 
+function alignLineLeft() {
+    const line = gMeme.lines[gMeme.selectedLineIdx]
+    line.pos.x = 10
+}
+
+function alignLineCenter() {
+    const line = gMeme.lines[gMeme.selectedLineIdx]
+    const canvasWidth = gElCanvas.width
+    const lineWidth = calcLineArea(line).width
+    line.pos.x = (canvasWidth - lineWidth) / 2
+}
+
+function alignLineRight() {
+    const line = gMeme.lines[gMeme.selectedLineIdx]
+    const canvasWidth = gElCanvas.width
+    const lineWidth = calcLineArea(line).width
+    line.pos.x = canvasWidth - lineWidth + 10
+}
+
+function changeLineFont(font) {
+    const line = gMeme.lines[gMeme.selectedLineIdx]
+    line.font = font
+    console.log(line.font)
+}
 
 
